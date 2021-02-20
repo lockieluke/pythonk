@@ -4,10 +4,8 @@ from typing import List
 
 
 class CompilerConfig:
-
     def __init__(self, projectRoot: str):
-        self.config = json.load(open(os.path.join(projectRoot, 'ptconfig.json')))
-        pass
+        self.config = json.load(open(os.path.join(projectRoot, 'pykconfig.json')))
 
     def get_config(self) -> object:
         """
@@ -15,54 +13,46 @@ class CompilerConfig:
         :return: Returns compiler options as object
         """
         return self.config
-        pass
 
     def get_compiler_target(self) -> str:
         """
         Get compiler target set in the ptconfig.json
         :return: Returns target setting as string e.g. Python 3 as 'python3', Python 2.7 as 'python27' or other Python versions
         """
-        return str(self.config['target'])
-        pass
+        return self.config['target']
 
     def get_remove_target(self) -> bool:
         """
         Get if compiler should remove comments
         :return: Returns removeComments setting as boolean
         """
-        return bool(self.config['removeComments'])
-        pass
+        return self.config['removeComments']
 
     def get_allow_any(self) -> bool:
         """
         Get if compiler should allow any
         :return: Returns allowAny setting as boolean
         """
-        return bool(self.config['allowAny'])
-        pass
+        return self.config['allowAny']
 
     def get_add_sourcemaps(self) -> bool:
         """
         Get if compiler should add source maps that point to the original PyTHONK source code
         :return: Returns sourceMaps setting as boolean
         """
-        return bool(self.config['sourceMaps'])
-        pass
+        return self.config['sourceMaps']
 
     def get_compile_output_dir(self) -> str:
         """
         Get the directory the compiler should output the compiled files to
         :return: Returns outDir setting as string
         """
-        return str(self.config['outDir'])
-        pass
+        return self.config['outDir']
 
     def get_excluded_dir(self) -> List[str]:
         """
         Get directories that the compiler should ignore and exclude
         :return: Returns excluded setting as List[str]
         """
-        return list(self.config['excluded'])
-        pass
+        return self.config['excluded']
 
-    pass
