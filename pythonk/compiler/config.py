@@ -51,22 +51,11 @@ class CompilerConfig:
         Get the directory the compiler should output the compiled files to
         :return: Returns outDir setting as string
         """
-<<<<<<< HEAD:pythonk/config.py
-        return self.config['outDir']
-=======
-        return str(os.path.join(self.projectRoot, self.config['outDir']))
-        pass
->>>>>>> locky_pr:pythonk/compiler/config.py
+        return os.path.join(self.projectRoot, self.config['outDir'])
 
     def get_excluded_dir(self) -> List[str]:
         """
         Get directories that the compiler should ignore and exclude
         :return: Returns excluded setting as List[str]
         """
-<<<<<<< HEAD:pythonk/config.py
-        return self.config['excluded']
-=======
-        return list(os.path.join(self.projectRoot, self.config['excluded']))
-        pass
->>>>>>> locky_pr:pythonk/compiler/config.py
-
+        return os.path.join(self.projectRoot, self.config['excluded'])
