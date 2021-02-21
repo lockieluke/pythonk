@@ -1,5 +1,5 @@
-from internal.lib.log import LogOperation
-from parser.internal.standard_lib import StandardLib
+from pythonk.internal.lib.log import LogOperation
+from pythonk.parser.internal.standard_lib import StandardLib
 
 
 class Log(StandardLib):

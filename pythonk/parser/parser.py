@@ -3,11 +3,12 @@ import warnings
 from rply.errors import ParserGeneratorWarning
 from rply.parser import LRParser
 
-from parser.global_parser import GlobalParser
-from parser.internal.data_types import DataTypes
-from parser.internal.err_handling import ErrorHandling
-from parser.internal.log import Log
-from parser.internal.math import Math
+from pythonk.parser.global_parser import GlobalParser
+from pythonk.parser.internal.data_types import DataTypes
+from pythonk.parser.internal.err_handling import ErrorHandling
+from pythonk.parser.internal.log import Log
+from pythonk.parser.internal.math import Math
+from pythonk.parser.internal.py import Py
 
 
 class PythonkParser():
@@ -22,6 +23,7 @@ class PythonkParser():
         Math()
         DataTypes()
         ErrorHandling()
+        Py()
         
         pass
 

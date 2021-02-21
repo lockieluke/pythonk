@@ -1,4 +1,4 @@
-from parser.internal.standard_lib import StandardLib
+from pythonk.parser.internal.standard_lib import StandardLib
 
 
 class ErrorHandling(StandardLib):
@@ -14,4 +14,7 @@ class ErrorHandling(StandardLib):
 
 
 class ArithmeticOperationTypeError(Exception):
+    pass
+
+class ArgumentTypeError(Exception):
     pass
