@@ -2,7 +2,7 @@ from typing import Any
 
 from rply.token import BaseBox
 
-from pythonk.compiler.compile_stream import CompileStream
+from compiler.compile_stream import CompileStream
 
 
 class InternalOperation(BaseBox):
