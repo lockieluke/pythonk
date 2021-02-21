@@ -133,3 +133,6 @@ test/ptconfig.json
 
 # Test folders
 test/
+
+# IDEA folder
+.idea/
