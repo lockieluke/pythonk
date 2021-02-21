@@ -1,4 +1,8 @@
+
 from internal.lib.math import Sum, Sub, Times, Divide
+from internal.utils.int import IntUtils
+from internal.utils.str import StrUtils
+from parser.internal.err_handling import ArithmeticOperationTypeError
 from parser.internal.standard_lib import StandardLib
 
 
@@ -14,6 +18,14 @@ class Math(StandardLib):
             left = p[0]
             right = p[2]
             operator = p[1]
+
+            if not IntUtils.which_not(left.eval(), right.eval()) == 'none' and not StrUtils.which_not(left.eval(), right.eval()) == 'none':
+                raise ArithmeticOperationTypeError("Arithmetic Operation is only allowed if both sides are number")
+            elif StrUtils.which_not(left.eval(), right.eval()) == 'none':
+                if operator.gettokentype() == 'SUM':
+                    return Sum(left, right)
+                pass
+
             if operator.gettokentype() == 'SUM':
                 return Sum(left, right)
             elif operator.gettokentype() == 'SUB':
