@@ -1,4 +1,4 @@
-from pythonk.lexer.token.base_token import BaseToken
+from lexer.token.base_token import BaseToken
 
 BasicToken: BaseToken = BaseToken({
     "OPEN_PAREN": r"\(",

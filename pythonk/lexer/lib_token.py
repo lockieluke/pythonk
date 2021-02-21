@@ -1,10 +1,10 @@
 from typing import List
 
-from pythonk.lexer.token.base_token import BaseToken
-from pythonk.lexer.token.basic import BasicToken
-from pythonk.lexer.token.data_types import DataTypesToken
-from pythonk.lexer.token.log import LogToken
-from pythonk.lexer.token.math import MathToken
+from lexer.token.base_token import BaseToken
+from lexer.token.basic import BasicToken
+from lexer.token.data_types import DataTypesToken
+from lexer.token.log import LogToken
+from lexer.token.math import MathToken
 
 
 def add_token_libs(token_libs: List[BaseToken]) -> dict:
