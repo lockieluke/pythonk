@@ -1,6 +1,8 @@
 import os
 import sys
 
+sys.path.append(os.path.join(os.getcwd(), 'pythonk'))
+
 from rply.lexer import Lexer
 from rply.parser import LRParser
 
