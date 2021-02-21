@@ -5,8 +5,12 @@ from typing import List
 
 class CompilerConfig:
 
+    config: dict
+    projectRoot: str
+
     def __init__(self, projectRoot: str):
-        self.config = json.load(open(os.path.join(projectRoot, 'ptconfig.json')))
+        self.projectRoot = os.path.abspath(projectRoot)
+        self.config = json.load(open(os.path.join(self.projectRoot, 'ptconfig.json')))
         pass
 
     def get_config(self) -> object:
@@ -54,7 +58,7 @@ class CompilerConfig:
         Get the directory the compiler should output the compiled files to
         :return: Returns outDir setting as string
         """
-        return str(self.config['outDir'])
+        return str(os.path.join(self.projectRoot, self.config['outDir']))
         pass
 
     def get_excluded_dir(self) -> List[str]:
@@ -62,7 +66,7 @@ class CompilerConfig:
         Get directories that the compiler should ignore and exclude
         :return: Returns excluded setting as List[str]
         """
-        return list(self.config['excluded'])
+        return list(os.path.join(self.projectRoot, self.config['excluded']))
         pass
 
     pass
