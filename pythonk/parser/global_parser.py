@@ -1,6 +1,6 @@
 from rply import ParserGenerator
 
-from pythonk.lexer.lexer import PythonkLexer
+from lexer.lexer import PythonkLexer
 
 parser: ParserGenerator = None
 

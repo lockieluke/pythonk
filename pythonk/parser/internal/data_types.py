@@ -1,5 +1,5 @@
-from pythonk.internal.types.data_types import Number, String
-from pythonk.parser.internal.standard_lib import StandardLib
+from internal.types.data_types import Number, String
+from parser.internal.standard_lib import StandardLib
 
 
 class DataTypes(StandardLib):

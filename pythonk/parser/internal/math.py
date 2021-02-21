@@ -1,5 +1,5 @@
-from pythonk.internal.lib.math import Sum, Sub, Times, Divide
-from pythonk.parser.internal.standard_lib import StandardLib
+from internal.lib.math import Sum, Sub, Times, Divide
+from parser.internal.standard_lib import StandardLib
 
 
 class Math(StandardLib):
