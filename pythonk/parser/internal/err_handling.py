@@ -1,4 +1,4 @@
-from pythonk.parser.internal.standard_lib import StandardLib
+from parser.internal.standard_lib import StandardLib
 
 
 class ErrorHandling(StandardLib):

@@ -1,8 +1,9 @@
-from pythonk.internal.lib.math import Sum, Sub, Times, Divide
-from pythonk.internal.utils.int import IntUtils
-from pythonk.internal.utils.str import StrUtils
-from pythonk.parser.internal.err_handling import ArithmeticOperationTypeError
-from pythonk.parser.internal.standard_lib import StandardLib
+
+from internal.lib.math import Sum, Sub, Times, Divide
+from internal.utils.int import IntUtils
+from internal.utils.str import StrUtils
+from parser.internal.err_handling import ArithmeticOperationTypeError
+from parser.internal.standard_lib import StandardLib
 
 
 class Math(StandardLib):

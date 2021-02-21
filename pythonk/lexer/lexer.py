@@ -1,7 +1,7 @@
 from rply import LexerGenerator
 from rply.lexer import Lexer
 
-from pythonk.lexer.lib_token import lib_token
+from lexer.lib_token import lib_token
 
 
 class PythonkLexer:
