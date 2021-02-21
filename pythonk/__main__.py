@@ -9,7 +9,7 @@ from rply.parser import LRParser
 from lexer.lexer import PythonkLexer
 from compiler.compile_stream import CompileStream
 from compiler.config import CompilerConfig
-from parser.parser import PythonkParser
+from pythonk.parser.parser import PythonkParser
 
 
 def read_file(filename: str) -> str:
