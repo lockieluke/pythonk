@@ -15,3 +15,6 @@ class ErrorHandling(StandardLib):
 
 class ArithmeticOperationTypeError(Exception):
     pass
+
+class ArgumentTypeError(Exception):
+    pass

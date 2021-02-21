@@ -5,6 +5,7 @@ from pythonk.lexer.token.basic import BasicToken
 from pythonk.lexer.token.data_types import DataTypesToken
 from pythonk.lexer.token.log import LogToken
 from pythonk.lexer.token.math import MathToken
+from pythonk.lexer.token.py import PyToken
 
 
 def add_token_libs(token_libs: List[BaseToken]) -> dict:
@@ -15,4 +16,4 @@ def add_token_libs(token_libs: List[BaseToken]) -> dict:
     return token_libs_result
 
 
-lib_token = add_token_libs([BasicToken, DataTypesToken, LogToken, MathToken])
+lib_token = add_token_libs([BasicToken, DataTypesToken, LogToken, MathToken, PyToken])

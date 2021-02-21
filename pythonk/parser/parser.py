@@ -8,6 +8,7 @@ from pythonk.parser.internal.data_types import DataTypes
 from pythonk.parser.internal.err_handling import ErrorHandling
 from pythonk.parser.internal.log import Log
 from pythonk.parser.internal.math import Math
+from pythonk.parser.internal.py import Py
 
 
 class PythonkParser():
@@ -22,6 +23,7 @@ class PythonkParser():
         Math()
         DataTypes()
         ErrorHandling()
+        Py()
         
         pass
 
