@@ -1,4 +1,4 @@
-from lexer.token.base_token import BaseToken
+from pythonk.lexer.token.base_token import BaseToken
 
 DataTypesToken: BaseToken = BaseToken({
     "NUMBER": r"\d+",
