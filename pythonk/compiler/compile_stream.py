@@ -2,12 +2,15 @@ from typing import List
 
 stream: List[str] = []
 
+
 class CompileStream:
 
     @staticmethod
     def add_stream(code_stream: str):
         global stream
-        stream.append(code_stream)
+        if not code_stream.isspace() and not code_stream == '':
+            stream.append(code_stream)
+            pass
         pass
 
     @staticmethod

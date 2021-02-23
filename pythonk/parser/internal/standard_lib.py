@@ -1,9 +1,9 @@
 from rply import ParserGenerator
 
-from parser.global_parser import GlobalParser
+from pythonk.parser.global_parser import GlobalParser
 
 
-class StandardLib:
+class StandardGrammar:
 
     parser: ParserGenerator
 

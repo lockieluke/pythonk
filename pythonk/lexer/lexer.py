@@ -1,18 +1,21 @@
 from rply import LexerGenerator
 from rply.lexer import Lexer
 
-from lexer.lib_token import lib_token
+from pythonk.lexer.lib_token import lib_token
 
 
 class PythonkLexer:
     lexer: LexerGenerator
     tokens: dict = lib_token
+    ignore_tokens: dict = {
+        ""
+    }
 
     def __init__(self):
         self.lexer = LexerGenerator()
         pass
 
-    def _add_tokens(self):
+    def add_tokens(self):
         for key in dict.keys(self.tokens):
             self.lexer.add(key, self.tokens[key])
             pass
@@ -20,7 +23,7 @@ class PythonkLexer:
         pass
 
     def get_lexer(self) -> Lexer:
-        self._add_tokens()
+        self.add_tokens()
         return self.lexer.build()
         pass
 

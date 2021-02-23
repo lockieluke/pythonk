@@ -1,8 +1,8 @@
-from internal.types.data_types import Number, String
-from parser.internal.standard_lib import StandardLib
+from pythonk.internal.types.data_types import Number, String
+from pythonk.parser.internal.standard_lib import StandardGrammar
 
 
-class DataTypes(StandardLib):
+class DataTypes(StandardGrammar):
 
     def load_grammar(self):
         @self.parser.production('expression : NUMBER')

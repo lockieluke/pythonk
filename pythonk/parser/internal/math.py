@@ -1,12 +1,12 @@
 
-from internal.lib.math import Sum, Sub, Times, Divide
-from internal.utils.int import IntUtils
-from internal.utils.str import StrUtils
-from parser.internal.err_handling import ArithmeticOperationTypeError
-from parser.internal.standard_lib import StandardLib
+from pythonk.internal.lib.math import Sum, Sub, Times, Divide
+from pythonk.internal.utils.int import IntUtils
+from pythonk.internal.utils.str import StrUtils
+from pythonk.parser.internal.err_handling import ArithmeticOperationTypeError
+from pythonk.parser.internal.standard_lib import StandardGrammar
 
 
-class Math(StandardLib):
+class Math(StandardGrammar):
 
     def load_grammar(self):
 

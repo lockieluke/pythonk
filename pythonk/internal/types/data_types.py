@@ -1,6 +1,6 @@
 from typing import Any
 
-from internal.types.base_type import BaseType
+from pythonk.internal.types.base_type import BaseType
 
 
 class Boolean(BaseType):

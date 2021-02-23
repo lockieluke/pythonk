@@ -1,7 +1,7 @@
-from parser.internal.standard_lib import StandardLib
+from pythonk.parser.internal.standard_lib import StandardGrammar
 
 
-class ErrorHandling(StandardLib):
+class ErrorHandling(StandardGrammar):
 
     def load_grammar(self):
         @self.parser.error
@@ -14,4 +14,7 @@ class ErrorHandling(StandardLib):
 
 
 class ArithmeticOperationTypeError(Exception):
+    pass
+
+class ArgumentTypeError(Exception):
     pass
