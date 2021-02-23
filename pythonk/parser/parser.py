@@ -16,6 +16,7 @@ class PythonkParser():
 
     def __init__(self):
         GlobalParser.init_parser()
+        self.parse_all()
         pass
 
     def parse_all(self):
