@@ -3,7 +3,7 @@ from rply import ParserGenerator
 from pythonk.parser.global_parser import GlobalParser
 
 
-class StandardLib:
+class StandardGrammar:
 
     parser: ParserGenerator
 

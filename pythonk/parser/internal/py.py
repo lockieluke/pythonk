@@ -1,8 +1,8 @@
 from pythonk.internal.lib.py import PyEvalOperation
-from pythonk.parser.internal.standard_lib import StandardLib
+from pythonk.parser.internal.standard_lib import StandardGrammar
 
 
-class Py(StandardLib):
+class Py(StandardGrammar):
 
     def load_grammar(self):
         @self.parser.production("program : PY_EVAL OPEN_PAREN expression CLOSE_PAREN SEMICOLON")
