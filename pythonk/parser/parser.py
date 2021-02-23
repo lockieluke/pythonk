@@ -4,6 +4,7 @@ from rply.errors import ParserGeneratorWarning
 from rply.parser import LRParser
 
 from pythonk.parser.global_parser import GlobalParser
+from pythonk.parser.internal.basic import Basic
 from pythonk.parser.internal.data_types import DataTypes
 from pythonk.parser.internal.err_handling import ErrorHandling
 from pythonk.parser.internal.log import Log
@@ -19,6 +20,7 @@ class PythonkParser():
 
     def parse_all(self):
 
+        Basic()
         Log()
         Math()
         DataTypes()

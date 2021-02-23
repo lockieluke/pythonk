@@ -4,5 +4,6 @@ BasicToken: BaseToken = BaseToken({
     "OPEN_PAREN": r"\(",
     "CLOSE_PAREN": r"\)",
     "SEMICOLON": r"\;",
-    "SPACE": r"/\s\s+/g"
+    "SPACE": r"\s",
+    "COMMENT": r"\#\s"
 })

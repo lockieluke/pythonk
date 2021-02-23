@@ -1,5 +1,6 @@
 import os
 import sys
+import re
 
 from rply.lexer import Lexer
 from rply.parser import LRParser
@@ -43,15 +44,16 @@ if __name__ == '__main__':
     output_filename: str = f"{basename.split('.')[0]}.py"
     projectRoot: str = os.path.dirname(filename)
     code: str = read_file(filename)
-    compileConfig: CompilerConfig = CompilerConfig(projectRoot)
+    CompilerConfig.init_config(projectRoot)
     for line in code.split('\n'):
 
-        if not line.isspace() and not len(line) == 0:
+        if not line.isspace() and not len(line) == 0 and not line.startswith('// '):
             compile_code(line)
-            pass
+        elif line.startswith('// ') and not CompilerConfig.get_remove_comments():
+            CompileStream.add_stream(f"# {line.replace('// ', '', 1)}")
 
         pass
 
-    write_file(CompileStream.output_stream(), os.path.join(compileConfig.get_compile_output_dir(), output_filename))
+    write_file(CompileStream.output_stream(), os.path.join(CompilerConfig.get_compile_output_dir(), output_filename))
 
     pass
