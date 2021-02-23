@@ -1,14 +1,12 @@
 import os
 import sys
 
-sys.path.append(os.path.join(os.getcwd(), 'pythonk'))
-
 from rply.lexer import Lexer
 from rply.parser import LRParser
 
-from lexer.lexer import PythonkLexer
-from compiler.compile_stream import CompileStream
-from compiler.config import CompilerConfig
+from pythonk.lexer.lexer import PythonkLexer
+from pythonk.compiler.compile_stream import CompileStream
+from pythonk.compiler.config import CompilerConfig
 from pythonk.parser.parser import PythonkParser
 
 
@@ -47,12 +45,13 @@ if __name__ == '__main__':
     code: str = read_file(filename)
     compileConfig: CompilerConfig = CompilerConfig(projectRoot)
     for line in code.split('\n'):
-        compile_code(line)
+
+        if not line.isspace() and not len(line) == 0:
+            compile_code(line)
+            pass
+
         pass
 
-    if not os.path.exists(compileConfig.get_compile_output_dir()):
-        os.mkdir(compileConfig.get_compile_output_dir())
-        pass
     write_file(CompileStream.output_stream(), os.path.join(compileConfig.get_compile_output_dir(), output_filename))
 
     pass
