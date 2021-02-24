@@ -1,4 +1,4 @@
-from pythonk.internal.types.data_types import Number, String
+from pythonk.ast.types.data_types import Number, String
 from pythonk.parser.internal.standard_grammar import StandardGrammar
 
 

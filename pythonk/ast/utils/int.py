@@ -1,4 +1,4 @@
-from pythonk.internal.utils.type_checker import TypeChecker
+from pythonk.ast.utils.type_checker import TypeChecker
 
 
 class IntUtils(TypeChecker):

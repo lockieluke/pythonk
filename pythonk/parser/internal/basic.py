@@ -1,4 +1,4 @@
-from pythonk.internal.lib.basic import BasicOperation
+from pythonk.ast.lib.basic import BasicOperation
 from pythonk.parser.internal.standard_grammar import StandardGrammar
 
 

@@ -1,5 +1,5 @@
 from pythonk.compiler.config import CompilerConfig
-from pythonk.internal.lib.internal_operation import InternalOperation
+from pythonk.ast.lib.internal_operation import InternalOperation
 
 
 class BasicOperation(InternalOperation):

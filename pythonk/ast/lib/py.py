@@ -1,6 +1,6 @@
-from pythonk.internal.lib.internal_operation import InternalOperation
+from pythonk.ast.lib.internal_operation import InternalOperation
 
-from pythonk.internal.utils.str import StrUtils
+from pythonk.ast.utils.str import StrUtils
 from pythonk.parser.internal.err_handling import ArgumentTypeError
 
 
