@@ -1,5 +1,5 @@
 from pythonk.internal.lib.basic import BasicOperation
-from pythonk.parser.internal.standard_lib import StandardGrammar
+from pythonk.parser.internal.standard_grammar import StandardGrammar
 
 
 class Basic(StandardGrammar):

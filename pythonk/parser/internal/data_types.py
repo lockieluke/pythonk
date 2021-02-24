@@ -1,5 +1,5 @@
 from pythonk.internal.types.data_types import Number, String
-from pythonk.parser.internal.standard_lib import StandardGrammar
+from pythonk.parser.internal.standard_grammar import StandardGrammar
 
 
 class DataTypes(StandardGrammar):

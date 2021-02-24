@@ -3,7 +3,7 @@ from pythonk.internal.lib.math import Sum, Sub, Times, Divide
 from pythonk.internal.utils.int import IntUtils
 from pythonk.internal.utils.str import StrUtils
 from pythonk.parser.internal.err_handling import ArithmeticOperationTypeError
-from pythonk.parser.internal.standard_lib import StandardGrammar
+from pythonk.parser.internal.standard_grammar import StandardGrammar
 
 
 class Math(StandardGrammar):
