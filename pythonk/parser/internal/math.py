@@ -1,5 +1,5 @@
 
-from pythonk.ast.lib.math import Sum, Sub, Times, Divide
+from pythonk.ast.math import Sum, Sub, Times, Divide
 from pythonk.ast.utils.int import IntUtils
 from pythonk.ast.utils.str import StrUtils
 from pythonk.parser.internal.err_handling import ArithmeticOperationTypeError

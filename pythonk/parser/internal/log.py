@@ -1,4 +1,4 @@
-from pythonk.ast.lib.log import LogOperation
+from pythonk.ast.log import LogOperation
 from pythonk.parser.internal.standard_grammar import StandardGrammar
 
 

@@ -1,4 +1,4 @@
-from pythonk.ast.lib.internal_operation import InternalOperation
+from pythonk.ast.internal_operation import InternalOperation
 
 
 class LogOperation(InternalOperation):

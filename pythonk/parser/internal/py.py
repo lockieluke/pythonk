@@ -1,4 +1,4 @@
-from pythonk.ast.lib.py import PyEvalOperation
+from pythonk.ast.py import PyEvalOperation
 from pythonk.parser.internal.standard_grammar import StandardGrammar
 
 
