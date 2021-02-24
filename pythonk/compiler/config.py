@@ -10,7 +10,7 @@ class CompilerConfig:
     @classmethod
     def init_config(cls, projectRoot: str):
         cls.projectRoot = os.path.abspath(projectRoot)
-        cls.config = json.load(open(os.path.join(cls.projectRoot, 'ptconfig.json')))
+        cls.config = json.load(open(os.path.join(cls.projectRoot, 'pykconfig.json')))
 
     @classmethod
     def get_config(cls) -> object:
@@ -23,7 +23,7 @@ class CompilerConfig:
     @classmethod
     def get_compiler_target(cls) -> str:
         """
-        Get compiler target set in the ptconfig.json
+        Get compiler target set in the pykconfig.json
         :return: Returns target setting as string e.g. Python 3 as 'python3', Python 2.7 as 'python27' or other Python versions
         """
         return str(cls.config['target'])
