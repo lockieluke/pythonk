@@ -2,24 +2,45 @@ from rply.token import BaseBox, Token
 
 from pythonk.compiler.compile_stream import CompileStream
 
-let_var_env: dict = {}
-const_var_env: dict = {}
+let_var_env: list[dict] = []
+const_var_env: list[dict] = []
 
 
-def check_var_defined(var_name: str) -> bool:
-    if var_name in let_var_env.values() or var_name in const_var_env.values():
-        return True
+def save_var(const: bool, var_type: str, var_name: str, filename: str = CompileStream.get_compiling_file()):
+    var_object: dict = {
+        "name": var_name,
+        "type": var_type,
+        "filename": filename
+    }
+
+    if const:
+        const_var_env.append(var_object)
     else:
-        return False
+        let_var_env.append(var_object)
 
     pass
 
 
+def check_var_defined(var_name: str) -> bool:
+    for var in let_var_env + const_var_env:
+        if var["filename"] == CompileStream.get_compiling_file() and var["name"] == var_name:
+            return True
+
+    return False
+
+
 def check_clet_or_let(var_name: str) -> str:
-    if var_name in let_var_env.values():
-        return 'let'
-    elif var_name in const_var_env.values():
-        return 'clet'
+    for var in let_var_env:
+        if var["filename"] == CompileStream.get_compiling_file() and var["name"] == var_name:
+            return 'let'
+        pass
+
+    for var in const_var_env:
+        if var["filename"] == CompileStream.get_compiling_file() and var["name"] == var_name:
+            return 'clet'
+        pass
+
+    raise VariableError(f"Variable {var_name} was not defined")
 
     pass
 
@@ -45,10 +66,11 @@ class VariableSetterOperation(BaseBox):
 
 class VariableAssignmentOperation(BaseBox):
 
-    def __init__(self, var_name: Token, var_expression: Token, const: bool = False):
+    def __init__(self, var_name: Token, var_expression: Token, const: bool = False, var_type: str = 'any'):
         self.var_name = var_name
         self.var_expression = var_expression
         self.const = const
+        self.var_type = var_type
         pass
 
     def eval(self):
@@ -57,13 +79,10 @@ class VariableAssignmentOperation(BaseBox):
 
         # Variable was assigned to something and was found in vmm(variable memory map)
         if check_var_defined(var_name):
-            raise AssignmentError(f"Variable {var_name} cannot be reassign")
+            raise AssignmentError(f"Variable {var_name} cannot be reassigned")
 
         # Put variable into vmm so that we can find out if the variable was assigned later
-        if not self.const:
-            let_var_env[CompileStream.get_compiling_file()] = var_name
-        else:
-            const_var_env[CompileStream.get_compiling_file()] = var_name
+        save_var(self.const, self.var_type, self.var_name.value)
         CompileStream.add_stream(f"{var_name} = {var_expression}")
         pass
 

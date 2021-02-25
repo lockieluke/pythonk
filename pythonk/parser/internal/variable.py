@@ -1,18 +1,19 @@
-from pythonk.ast.lib.variable import VariableAssignmentOperation, VariableGetterOperation, VariableSetterOperation
+from pythonk.ast.variable import VariableAssignmentOperation, VariableGetterOperation, VariableSetterOperation
 from pythonk.parser.internal.standard_grammar import StandardGrammar
 
 
 class Variable(StandardGrammar):
 
     def load_grammar(self):
-
-        @self.parser.production("program : VAR_LET VAR_IDENTIFIER = expression SEMICOLON")
-        def var_define(p):
-            return VariableAssignmentOperation(p[1], p[3])
+        # @self.parser.production("program : VAR_CLET VAR_IDENTIFIER = expression SEMICOLON")
+        # @self.parser.production("program : VAR_LET VAR_IDENTIFIER = expression SEMICOLON")
+        # def typed_var_define(p):
+        #     return
 
         @self.parser.production("program : VAR_CLET VAR_IDENTIFIER = expression SEMICOLON")
+        @self.parser.production("program : VAR_LET VAR_IDENTIFIER = expression SEMICOLON")
         def var_define(p):
-            return VariableAssignmentOperation(p[1], p[3], True)
+            return VariableAssignmentOperation(p[1], p[3], p[0].name == "VAR_CLET")
 
         @self.parser.production("expression : VAR_IDENTIFIER")
         def var_read(p):
