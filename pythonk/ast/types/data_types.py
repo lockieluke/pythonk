@@ -27,3 +27,11 @@ class Number(BaseType):
         return int(self.value)
 
     pass
+
+
+class ExAny(BaseType):
+
+    def get_value(self) -> any:
+        return any(self.value)
+
+    pass
