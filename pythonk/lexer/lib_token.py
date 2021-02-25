@@ -18,3 +18,13 @@ def add_token_libs(token_libs: List[BaseToken]) -> dict:
 
 
 lib_token = add_token_libs([BasicToken, DataTypesToken, LogToken, MathToken, PyToken, VariableToken])
+
+
+class TokenLib:
+
+    @staticmethod
+    def get_lib_token():
+        return lib_token
+
+    pass
+
