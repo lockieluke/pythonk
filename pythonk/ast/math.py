@@ -1,4 +1,4 @@
-from internal.logic.assignment import BinaryOp
+from pythonk.internal.logic.assignment import BinaryOp
 
 
 class Sum(BinaryOp):

@@ -10,12 +10,14 @@ from pythonk.parser.internal.err_handling import ErrorHandling
 from pythonk.parser.internal.log import Log
 from pythonk.parser.internal.math import Math
 from pythonk.parser.internal.py import Py
+from pythonk.parser.internal.variable import Variable
 
 
 class PythonkParser():
 
     def __init__(self):
         GlobalParser.init_parser()
+        self.parse_all()
         pass
 
     def parse_all(self):
@@ -26,6 +28,7 @@ class PythonkParser():
         DataTypes()
         ErrorHandling()
         Py()
+        Variable()
         
         pass
 

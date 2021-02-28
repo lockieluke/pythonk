@@ -22,7 +22,7 @@ class CompilerConfig:
     @classmethod
     def get_compiler_target(cls) -> str:
         """
-        Get compiler target set in the ptconfig.json
+        Get compiler target set in the pykconfig.json
         :return: Returns target setting as string e.g. Python 3 as 'python3', Python 2.7 as 'python27' or other Python versions
         """
         return cls.config['target']

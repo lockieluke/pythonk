@@ -19,7 +19,7 @@ class PythonkLexer:
         for key in dict.keys(self.tokens):
             self.lexer.add(key, self.tokens[key])
             pass
-        self.lexer.ignore(r'\s+')
+        self.lexer.ignore(r'[ \t\r\f\v]+')
         pass
 
     def get_lexer(self) -> Lexer:
