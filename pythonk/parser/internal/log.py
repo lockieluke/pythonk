@@ -1,5 +1,5 @@
-from pythonk.internal.lib.log import LogOperation
-from pythonk.parser.internal.standard_lib import StandardGrammar
+from pythonk.ast.log import LogOperation
+from pythonk.parser.internal.standard_grammar import StandardGrammar
 
 
 class Log(StandardGrammar):

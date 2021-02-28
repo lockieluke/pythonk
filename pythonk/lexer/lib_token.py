@@ -6,6 +6,7 @@ from pythonk.lexer.token.data_types import DataTypesToken
 from pythonk.lexer.token.log import LogToken
 from pythonk.lexer.token.math import MathToken
 from pythonk.lexer.token.py import PyToken
+from pythonk.lexer.token.variable import VariableToken
 
 
 def add_token_libs(token_libs: List[BaseToken]) -> dict:
@@ -16,4 +17,14 @@ def add_token_libs(token_libs: List[BaseToken]) -> dict:
     return token_libs_result
 
 
-lib_token = add_token_libs([BasicToken, DataTypesToken, LogToken, MathToken, PyToken])
+lib_token = add_token_libs([BasicToken, DataTypesToken, LogToken, MathToken, PyToken, VariableToken])
+
+
+class TokenLib:
+
+    @staticmethod
+    def get_lib_token():
+        return lib_token
+
+    pass
+

@@ -1,4 +1,4 @@
-import re
+#import re
 
 from internal.utils.type_checker import TypeChecker
 

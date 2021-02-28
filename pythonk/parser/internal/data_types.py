@@ -1,17 +1,27 @@
-from pythonk.internal.types.data_types import Number, String
-from pythonk.parser.internal.standard_lib import StandardGrammar
+from pythonk.ast.types.data_types import Number, String, Boolean
+from pythonk.parser.internal.standard_grammar import StandardGrammar
 
 
 class DataTypes(StandardGrammar):
 
     def load_grammar(self):
-        @self.parser.production('expression : NUMBER')
-        def number(p):
-            return Number(p[0].value)
 
-        @self.parser.production('expression : STRING')
+        @self.parser.production('expression : const')
+        def expression_const(p):
+            return p[0]
+
+        @self.parser.production('const : BOOLEAN')
+        def number(p):
+            return Boolean(p[0].getstr())
+
+        @self.parser.production('const : NUMBER')
+        def number(p):
+            return Number(int(p[0].getstr()))
+
+        @self.parser.production('const : STRING')
         def string(p):
-            return String(p[0].value)
+            return String(p[0].getstr().strip('"\''))
+
         pass
 
     pass

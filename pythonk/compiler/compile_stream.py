@@ -1,23 +1,30 @@
 from typing import List
 
-stream: List[str] = []
-
 
 class CompileStream:
 
-    @staticmethod
-    def add_stream(code_stream: str):
-        global stream
+    compiling_file: str = ""
+    stream: List[str] = []
+
+    @classmethod
+    def set_filename(cls, filename):
+        cls.compiling_file = filename
+
+    @classmethod
+    def get_compiling_file(cls) -> str:
+        return cls.compiling_file
+
+    @classmethod
+    def add_stream(cls, code_stream: str):
         if not code_stream.isspace() and not code_stream == '':
-            stream.append(code_stream)
+            cls.stream.append(code_stream)
             pass
         pass
 
-    @staticmethod
-    def output_stream() -> str:
-        global stream
+    @classmethod
+    def output_stream(cls) -> str:
         stream_output: str = ""
-        for stream_line in stream:
+        for stream_line in cls.stream:
             stream_output += f"{stream_line}\n"
             pass
         return stream_output
