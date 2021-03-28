@@ -12,7 +12,15 @@ class DataTypes(StandardGrammar):
 
         @self.parser.production('const : BOOLEAN')
         def number(p):
-            return Boolean(p[0].getstr())
+            finalized_bool: str = ""
+            given_bool: str = p[0].getstr()
+
+            if given_bool == "false":
+                finalized_bool = "False"
+            elif given_bool == "true":
+                finalized_bool = "True"
+
+            return Boolean(finalized_bool)
 
         @self.parser.production('const : NUMBER')
         def number(p):

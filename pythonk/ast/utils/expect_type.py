@@ -1,6 +1,7 @@
 from rply import Token
 
 from pythonk.ast.types.base_type import BaseType
+from pythonk.ast.types.data_types import ExAny
 
 
 class ExpectType:
@@ -16,7 +17,10 @@ class ExpectType:
 
     @staticmethod
     def get_exp_type(value: Token) -> str:
-        return type(value).__name__
+        if value is not ExAny:
+            return value.get_type_name()
+        else:
+            return "any"
 
     pass
 

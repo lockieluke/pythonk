@@ -13,6 +13,9 @@ class BaseType(BaseBox):
     def get_value(self) -> any:
         return any(None)
 
+    def get_type_name(self) -> str:
+        return "any"
+
     def eval(self):
         return self.value
 
