@@ -10,7 +10,15 @@ class CompilerConfig:
     @classmethod
     def init_config(cls, projectRoot: str):
         cls.projectRoot = os.path.abspath(projectRoot)
-        cls.config = json.load(open(os.path.join(cls.projectRoot, 'pykconfig.json')))
+        cls.config = cls.safe_load_config()
+
+    @classmethod
+    def safe_load_config(cls):
+        config_path: str = os.path.join(cls.projectRoot, 'pykconfig.json')
+        if not os.path.exists(config_path):
+            raise FileNotFoundError("pykconfig.json is not found, not proceeding to compile")
+
+        return json.load(open(config_path))
 
     @classmethod
     def get_config(cls) -> object:
